@@ -129,15 +129,15 @@ img { max-width: 100%; display: block; }
 
 /* ---------- hero ---------- */
 
-.hero { padding: 1.75rem 0 2rem; border-bottom: 1px solid var(--line); }
+.hero { padding: 0 0 1rem; border-bottom: 1px solid var(--line); }
 
 .hero__name {
   font-family: var(--f-display);
   font-weight: 800;
-  font-size: clamp(2.1rem, 5.2vw, 3.6rem);
+  font-size: clamp(1.8rem, 4.2vw, 2.9rem);
   letter-spacing: -0.035em;
   line-height: 0.98;
-  margin: 0 0 0.85rem;
+  margin: -0.12em 0 0.85rem;   /* optical align with the nav mark */
 }
 
 .hero__thesis {
@@ -177,7 +177,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   gap: 6px;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
   flex-wrap: wrap;
 }
 .seq__btn {
@@ -205,7 +205,7 @@ img { max-width: 100%; display: block; }
 
 /* ---------- section headers ---------- */
 
-.sec { padding: 3rem 0; border-bottom: 1px solid var(--line); }
+.sec { padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
 .sec:last-child { border-bottom: 0; }
 
 .sec__label {
@@ -606,4 +606,45 @@ img.card__thumb--capped {
   color: var(--signal);
   border: 1px solid var(--signal);
   padding: 0.05rem 0.3rem;
+}
+
+/* ---------- now showing band (top of home) ---------- */
+/* QR codes at events point at the root, so the piece someone is standing in
+   front of needs to be the first thing on the page. */
+
+.nowshowing {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 calc(var(--pad) * -1) 1.25rem;
+  padding: 0.9rem var(--pad);
+  background: var(--shop);
+  border-bottom: 1px solid var(--signal);
+  color: var(--bone);
+}
+.nowshowing:hover { text-decoration: none; background: var(--panel); }
+
+.nowshowing__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--signal);
+  flex: 0 0 8px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .nowshowing__dot { animation: onview-pulse 2s ease-in-out infinite; }
+}
+
+.nowshowing__text { display: flex; flex-direction: column; gap: 0.15rem; }
+.nowshowing__text strong {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+.nowshowing__sub {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--signal);
 }
