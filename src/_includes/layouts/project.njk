@@ -1,0 +1,69 @@
+---
+layout: layouts/base.njk
+---
+<a class="backlink" href="{{ '/' | url }}">&larr; All work</a>
+
+{#- Hero: video if there is one, otherwise the first photo. -#}
+{% if media.type == "youtube" %}{% youtube media.id, title %}
+{% elif media.type == "vimeo" %}{% vimeo media.id, title %}
+{% elif media.type == "soundcloud" %}{% soundcloud media.url, title %}
+{% else %}{% hero page.fileSlug, title %}{% endif %}
+
+<h1 class="page-title">{{ title }}</h1>
+<div class="proj__meta">{{ year }} &middot; {{ kinds | join(" / ") }}</div>
+<p class="proj__tagline">{{ tagline }}</p>
+
+{% if onview %}
+<p class="onview"><span class="onview__dot" aria-hidden="true"></span>
+  On view &middot; {{ onview.venue }}{% if onview.until %} &middot; {{ onview.until }}{% endif %}
+</p>
+{% endif %}
+
+{% if howto %}
+<section class="howto" aria-labelledby="howto-h">
+  <h2 class="howto__h" id="howto-h">How to play</h2>
+  <ol class="howto__list">
+    {%- for step in howto %}
+    <li>{{ step }}</li>
+    {%- endfor %}
+  </ol>
+</section>
+{% endif %}
+
+<div class="prose">
+{{ content | safe }}
+</div>
+
+{% gallery page.fileSlug %}
+
+{% if role or credits or venues or links %}
+<div class="prose">
+{% if role %}<h2>Role</h2><p>{{ role }}</p>{% endif %}
+{% if credits %}<h2>Credits</h2><p>{{ credits }}</p>{% endif %}
+{% if venues %}<h2>Shown</h2><ul class="factlist">{% for v in venues %}<li>{{ v }}</li>{% endfor %}</ul>{% endif %}
+{% if links %}<h2>More</h2><ul class="factlist">{% for l in links %}<li><a href="{{ l.url }}">{{ l.label }}</a></li>{% endfor %}</ul>{% endif %}
+</div>
+{% endif %}
+
+{% if booking %}{% include "partials/booking-form.njk" %}{% endif %}
+
+{#- Projects sort newest first, so "next in collection" is the older one. -#}
+{%- set newer = collections.projects | getPreviousCollectionItem %}
+{%- set older = collections.projects | getNextCollectionItem %}
+{% if newer or older %}
+<nav class="projnav" aria-label="Other projects">
+  {% if newer %}
+  <a class="projnav__link projnav__link--prev" href="{{ newer.url | url }}">
+    <span class="projnav__dir">&larr; Newer</span>
+    <span class="projnav__title">{{ newer.data.title }}</span>
+  </a>
+  {% else %}<span></span>{% endif %}
+
+  {% if older %}
+  <a class="projnav__link projnav__link--next" href="{{ older.url | url }}">
+    <span class="projnav__dir">Older &rarr;</span>
+    <span class="projnav__title">{{ older.data.title }}</span>
+  </a>
+  {% endif %}
+</nav>
+{% endif %}

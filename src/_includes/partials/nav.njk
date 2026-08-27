@@ -1,0 +1,14 @@
+<nav class="nav">
+  <a class="nav__mark" href="{{ '/' | url }}">Jiffer<br>Harriman</a>
+  <div class="nav__role">{{ site.role }}</div>
+  <ul class="nav__list">
+    {%- for item in site.nav %}
+    <li><a class="nav__link" href="{{ item.url | url }}"
+      {%- if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+    {%- endfor %}
+  </ul>
+  <div class="nav__foot">
+    <a href="https://modularmuse.com">modularmuse.com&nbsp;&#8599;</a><br>
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+  </div>
+</nav>

@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: About
+description: Artist, engineer, musician, and educator based in Boulder, Colorado.
+---
+<h1 class="page-title">About</h1>
+<div class="prose">
+  <p>I make sound interactive, and sometimes musical. My work explores new ways to interact with
+  sound by building digital musical instruments and musical robots — installations where the line
+  between audience and performer stops mattering, and anyone who walks up can play.</p>
+
+  <p>I came to this sideways: electrical engineering at CU Boulder, seven years designing chips at
+  Xilinx, then a master's in Music, Science and Technology at Stanford's CCRMA, and a PhD at CU's
+  ATLAS Institute on scaffolded design tools for interactive music. The engineering never went
+  away; it just started serving the music.</p>
+
+  <h2>Teaching</h2>
+  <p>I teach and develop courses at the ATLAS Institute (CU Boulder) and Inworks (CU Denver) —
+  Creative Technology, Physical Computing, Internet of Things, Digital Fabrication, Human Centered
+  Design — plus workshops for makers from about age eight through adult. Hands-on, learn-by-doing,
+  share and critique.</p>
+
+  <h2>B.E.A.T.</h2>
+  <p>In 2019 I founded <strong>Boulder Experiments in Art and Technology</strong>, a community for
+  people working at the intersection of art, technology, and science. We meet, share what we are
+  building, and occasionally put on a show.</p>
+
+  <h2>Elsewhere</h2>
+  <ul class="factlist">
+    <li><a href="https://modularmuse.com">Modular Muse &#8599;</a></li>
+    <li><a href="https://github.com/Jiffer">GitHub &#8599;</a></li>
+    <li><a href="https://instagram.com/jifferh">Instagram &#8599;</a></li>
+  </ul>
+</div>
+
+<section class="sec" id="contact">
+  <h2>Say hello</h2>
+  <p class="prose">Email works: <a href="mailto:{{ site.email }}">{{ site.email }}</a> &middot; {{ site.phone }}</p>
+  <form class="form" action="https://formspree.io/f/{{ site.formspreeId }}" method="POST">
+    <input type="hidden" name="_subject" value="jifferharriman.com — general contact">
+    <input type="hidden" name="source" value="contact:general">
+    <label class="field"><span>Your name</span><input type="text" name="name" required></label>
+    <label class="field"><span>Email</span><input type="email" name="email" required></label>
+    <label class="field"><span>Message</span><textarea name="message" rows="5" required></textarea></label>
+    <button class="btn" type="submit">Send</button>
+  </form>
+</section>

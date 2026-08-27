@@ -1,0 +1,15 @@
+{
+  "title": "Jiffer Harriman",
+  "role": "Artist · Engineer · Musician",
+  "email": "jifferh@gmail.com",
+  "phone": "720.839.4916",
+  "formspreeId": "YOUR_FORM_ID",
+  "nav": [
+    { "label": "Work",   "url": "/" },
+    { "label": "Studio", "url": "/studio/" },
+    { "label": "Music",  "url": "/music/" },
+    { "label": "Lab",    "url": "/lab/" },
+    { "label": "About",  "url": "/about/" },
+    { "label": "CV",     "url": "/cv/" }
+  ]
+}

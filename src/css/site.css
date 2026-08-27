@@ -1,0 +1,609 @@
+/* ============================================================
+   Jiffer Harriman — site styles
+   Palette derives from the work: copper (solenoid windings,
+   motor coils) against signal-teal (MIDI / digital control),
+   on a dark shop-floor ink.
+   ============================================================ */
+
+:root {
+  --ink:     #101319;
+  --shop:    #171B23;
+  --panel:   #1D222C;
+  --line:    #2B313D;
+  --bone:    #ECE7DD;
+  --dim:     #939CAB;
+  --copper:  #C87F45;
+  --signal:  #46D2C6;
+
+  --measure: 62ch;
+  --nav-w:   232px;
+  --pad:     clamp(1.25rem, 4vw, 3rem);
+
+  --f-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --f-body:    "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  --f-mono:    "JetBrains Mono", ui-monospace, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--signal); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ---------- layout ---------- */
+
+.shell { display: flex; min-height: 100vh; }
+
+.main {
+  flex: 1;
+  min-width: 0;
+  padding: var(--pad);
+  padding-bottom: 6rem;
+}
+
+.wrap { max-width: 1080px; }
+
+/* ---------- side nav ---------- */
+
+.nav {
+  width: var(--nav-w);
+  flex: 0 0 var(--nav-w);
+  border-right: 1px solid var(--line);
+  padding: var(--pad) 1.5rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--shop);
+}
+
+.nav__mark {
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--bone);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.nav__mark:hover { text-decoration: none; color: var(--copper); }
+
+.nav__role {
+  font-family: var(--f-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 2.25rem;
+}
+
+.nav__list { list-style: none; margin: 0 0 2rem; padding: 0; }
+.nav__list li { margin-bottom: 0.15rem; }
+
+.nav__link {
+  display: block;
+  padding: 0.3rem 0;
+  color: var(--bone);
+  font-size: 0.95rem;
+  border-bottom: 1px solid transparent;
+}
+.nav__link:hover { color: var(--copper); text-decoration: none; }
+.nav__link[aria-current="page"] { color: var(--copper); }
+.nav__link[aria-current="page"]::before {
+  content: "";
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--copper);
+  margin-right: 0.55rem;
+  vertical-align: 0.15em;
+}
+
+.nav__foot {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  line-height: 1.9;
+  color: var(--dim);
+}
+.nav__foot a { color: var(--dim); }
+.nav__foot a:hover { color: var(--signal); }
+
+/* ---------- hero ---------- */
+
+.hero { padding: 1.75rem 0 2rem; border-bottom: 1px solid var(--line); }
+
+.hero__name {
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: clamp(2.1rem, 5.2vw, 3.6rem);
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  margin: 0 0 0.85rem;
+}
+
+.hero__thesis {
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  line-height: 1.45;
+  max-width: 48ch;
+  margin: 0 0 1.5rem;
+  color: var(--dim);
+}
+.hero__thesis em { color: var(--copper); font-style: normal; }
+.hero__thesis em { color: var(--copper); font-style: normal; }
+
+/* signature element: a playable 16-step sequencer.
+   16 Step is one of the pieces; the sequencer is the vernacular. */
+/* Spans the full content column — negative margins cancel .main's padding.
+   Column count is set by js/seq.js from the available width. */
+.seq {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);   /* placeholder; JS overwrites */
+  gap: 3px;
+  margin: 0 calc(var(--pad) * -1) 0.7rem;
+}
+.seq__cell {
+  height: 46px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 0;
+  cursor: pointer;
+  transition: background .12s, border-color .12s, transform .08s;
+}
+.seq__cell:hover { border-color: var(--dim); }
+.seq__cell--on { background: var(--copper); border-color: var(--copper); }
+.seq__cell--head { border-color: var(--signal); }
+.seq__cell--hit { background: var(--signal); border-color: var(--signal); transform: scale(1.12); }
+
+.seq__controls {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.seq__btn {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--dim);
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+  transition: color .15s, border-color .15s;
+}
+.seq__btn:hover { color: var(--bone); border-color: var(--dim); }
+.seq__btn[aria-pressed="true"] { color: var(--signal); border-color: var(--signal); }
+
+.seq__label {
+  font-family: var(--f-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+/* ---------- section headers ---------- */
+
+.sec { padding: 3rem 0; border-bottom: 1px solid var(--line); }
+.sec:last-child { border-bottom: 0; }
+
+.sec__label {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin: 0 0 1.5rem;
+}
+
+h1.page-title {
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  margin: 0 0 1.5rem;
+}
+
+h2 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: -0.015em;
+  margin: 2.5rem 0 0.75rem;
+}
+
+.prose { max-width: var(--measure); }
+.prose p { margin: 0 0 1.15rem; }
+
+/* ---------- tag filter (styled as sequencer track buttons) ---------- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 2rem;
+}
+
+.filter {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dim);
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  transition: color .15s, border-color .15s;
+}
+.filter:hover { color: var(--bone); border-color: var(--dim); }
+.filter[aria-pressed="true"] {
+  color: var(--ink);
+  background: var(--signal);
+  border-color: var(--signal);
+}
+
+/* ---------- project grid ---------- */
+
+/* Masonry: cards keep their image's real proportions and stack to fill. */
+.grid {
+  columns: 3;
+  column-gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 900px) { .grid { columns: 2; } }
+@media (max-width: 560px) { .grid { columns: 1; } }
+
+.card {
+  background: var(--shop);
+  padding: 1.25rem;
+  display: block;              /* block, not flex — break-inside is flaky on flex */
+  margin-bottom: 1px;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  color: var(--bone);
+  transition: background .15s;
+}
+.card:hover { background: var(--panel); text-decoration: none; }
+.card:hover .card__title { color: var(--copper); }
+
+.card__thumb {
+  aspect-ratio: 4 / 3;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      var(--panel) 0 8px,
+      #202632 8px 16px
+    );
+  border: 1px solid var(--line);
+  margin-bottom: 0.35rem;
+}
+
+.card__meta {
+  font-family: var(--f-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.card__title {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  margin: 0;
+  transition: color .15s;
+}
+
+.card__tagline { font-size: 0.9rem; color: var(--dim); margin: 0; }
+
+.empty {
+  font-family: var(--f-mono);
+  font-size: 0.8rem;
+  color: var(--dim);
+  padding: 2rem 0;
+}
+
+/* ---------- project page ---------- */
+
+.proj__meta {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 1rem;
+}
+
+.proj__tagline {
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  line-height: 1.45;
+  max-width: 40ch;
+  color: var(--copper);
+  margin: 0 0 2.5rem;
+}
+
+.embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  margin-bottom: 2.5rem;
+}
+.embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* Masonry via CSS columns: images keep their own aspect ratio and stack to
+   fill vertical space. Reading order is per column, top to bottom. */
+.gallery {
+  column-gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin: 2.5rem 0;
+}
+.gallery--1 { columns: 1; }
+.gallery--few { columns: 2; }
+.gallery--many { columns: 3; }
+
+/* eleventy-img emits <picture> when there are multiple formats, a bare <img>
+   otherwise — target both so neither breaks across a column. */
+.gallery > * {
+  display: block;
+  width: 100%;
+  margin-bottom: 1px;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+}
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;   /* the actual fix — no stretch */
+}
+
+@media (max-width: 800px) {
+  .gallery--many { columns: 2; }
+}
+@media (max-width: 560px) {
+  .gallery--few,
+  .gallery--many { columns: 1; }
+}
+
+.factlist { list-style: none; margin: 0; padding: 0; }
+.factlist li {
+  font-size: 0.9rem;
+  color: var(--dim);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.backlink {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+/* ---------- mobile ---------- */
+
+@media (max-width: 800px) {
+  .shell { display: block; }
+  .nav {
+    width: auto;
+    height: auto;
+    position: static;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 1.25rem var(--pad);
+  }
+  .nav__role { margin-bottom: 1.25rem; }
+  .nav__list { display: flex; flex-wrap: wrap; gap: 0 1.1rem; margin-bottom: 1rem; }
+  .nav__link { border: 0; }
+  .nav__foot { display: none; }
+}
+
+/* ---------- forms ---------- */
+
+.form { max-width: 42ch; margin-top: 1.5rem; }
+
+.field { display: block; margin-bottom: 1rem; }
+.field > span {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 0.35rem;
+}
+.field input, .field textarea {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--bone);
+  font-family: var(--f-body);
+  font-size: 0.95rem;
+  padding: 0.55rem 0.7rem;
+}
+.field input:focus, .field textarea:focus { border-color: var(--signal); outline: none; }
+.field textarea { resize: vertical; }
+
+.btn {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--copper);
+  border: 1px solid var(--copper);
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+}
+.btn:hover { background: var(--signal); border-color: var(--signal); }
+
+/* card thumbnails come from eleventy-img; the hatch is the no-photo fallback */
+.card__thumb--empty {
+  aspect-ratio: 4 / 3;
+  background: repeating-linear-gradient(45deg, var(--panel) 0 8px, #202632 8px 16px);
+  border: 1px solid var(--line);
+  margin-bottom: 0.35rem;
+}
+/* Real images keep their own shape (masonry). Only the extremes get cropped. */
+img.card__thumb {
+  aspect-ratio: auto;
+  width: 100%;
+  height: auto;
+  object-fit: fill;
+  margin-bottom: 0.6rem;
+}
+
+/* Taller than 3:4 — capped so one photo can't swallow a column.
+   `focus` in front matter sets object-position; centre if unset. */
+img.card__thumb--capped {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__meta { margin-bottom: 0.3rem; }
+.card__title { margin: 0 0 0.3rem; }
+.embed--audio { aspect-ratio: auto; height: 166px; }
+.card[hidden] { display: none; }
+
+/* ---------- project hero + next/prev ---------- */
+
+.proj__heromedia { margin-bottom: 2.5rem; }
+.proj__hero {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+
+.projnav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.projnav__link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-width: 45%;
+  color: var(--bone);
+}
+.projnav__link:hover { text-decoration: none; }
+.projnav__link:hover .projnav__title { color: var(--copper); }
+.projnav__link--next { text-align: right; margin-left: auto; }
+
+.projnav__dir {
+  font-family: var(--f-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.projnav__title {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  transition: color .15s;
+}
+
+@media (max-width: 560px) {
+  .projnav { flex-direction: column; gap: 1.5rem; }
+  .projnav__link { max-width: 100%; }
+  .projnav__link--next { text-align: left; margin-left: 0; }
+}
+
+/* ---------- on view / how to play ---------- */
+
+/* Shown when a piece is currently installed somewhere. */
+.onview {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--signal);
+  border: 1px solid var(--signal);
+  padding: 0.4rem 0.7rem;
+  margin: 0 0 2rem;
+}
+.onview__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--signal);
+  flex: 0 0 7px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .onview__dot { animation: onview-pulse 2s ease-in-out infinite; }
+  @keyframes onview-pulse { 50% { opacity: 0.25; } }
+}
+
+/* Instructions for someone standing in front of the piece — sits above the
+   body copy so a phone shows it without scrolling. */
+.howto {
+  border: 1px solid var(--line);
+  background: var(--shop);
+  padding: 1.25rem 1.5rem;
+  margin: 0 0 2.5rem;
+}
+.howto__h {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin: 0 0 0.9rem;
+  font-weight: 500;
+}
+.howto__list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+.howto__list li { margin-bottom: 0.5rem; }
+.howto__list li:last-child { margin-bottom: 0; }
+
+.card__onview {
+  color: var(--signal);
+  border: 1px solid var(--signal);
+  padding: 0.05rem 0.3rem;
+}
