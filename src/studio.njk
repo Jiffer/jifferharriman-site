@@ -6,22 +6,36 @@ description: Creative technology services — hardware, software, and interactiv
 <h1 class="page-title">Studio</h1>
 <p class="sec__label">Creative technology services</p>
 <div class="prose">
-  <p>Commissioned and collaborative work runs through <strong>Modular Muse</strong>, my studio.
+  <p>Commissioned and collaborative work runs through my studio, <strong>Modular Muse</strong>.
   Custom hardware and software for interactive experiences, exhibits, and instruments — from
-  first concept through a system that survives a public run.</p>
+  brainstorming first concepts through iterative prototypes to a system that survives the public run.</p>
 
   <h2>What that looks like</h2>
   <ul class="factlist">
-    <li>Interactive installations and exhibits, built to be handled by the public</li>
+    <li>Expressive, Interactive installations and exhibits, built to be handled by the public</li>
     <li>Custom electronics: embedded systems, PCB design and layout, motor and sound actuation</li>
-    <li>Software for desktop, mobile, and embedded — C/C++, JavaScript, node.js, openFrameworks, Processing, Max/MSP, Pd</li>
+    <li>Software for desktop, mobile, and embedded — C/C++, JavaScript, openFrameworks, Processing, Max/MSP, Pd</li>
     <li>Technical direction and prototyping alongside artists, exhibit designers, and researchers</li>
   </ul>
 
   <h2>Toolkits</h2>
   <p>Some of these methods are packaged as hardware anyone can build on.
-  <a href="https://modularmuse.com">See Modular Muse &#8599;</a></p>
+  {# <a href="https://modularmuse.com">See Modular Muse &#8599;</a></p> #}
 
   <h2>Start a project</h2>
   <p><a href="mailto:{{ site.email }}">{{ site.email }}</a> &middot; {{ site.phone }}</p>
+
+  <form class="form" action="https://formspree.io/f/{{ site.formspreeId }}" method="POST">
+  <input type="hidden" name="_subject" value="Studio inquiry">
+  <input type="hidden" name="source" value="contact:general">
+
+  <label class="field"><span>Your name</span>
+    <input type="text" name="name" required></label>
+  <label class="field"><span>Email</span>
+    <input type="email" name="email" required></label>
+  <label class="field"><span>What's the project?</span>
+    <textarea name="message" rows="5" required></textarea></label>
+
+  <button class="btn" type="submit">Send</button>
+</form>
 </div>

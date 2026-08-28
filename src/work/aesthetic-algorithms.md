@@ -1,6 +1,6 @@
 ---
 title: Aesthetic Algorithms
-year: 2015
+year: 2018
 tagline: Laser-etched patterns that play themselves, and change the closer you get.
 kinds: [installation, sound]
 # role: Concept, software, fabrication

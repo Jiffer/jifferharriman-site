@@ -92,6 +92,13 @@ module.exports = function (eleventyConfig) {
     `<div class="embed embed--audio"><iframe src="https://w.soundcloud.com/player/?url=${encodeURIComponent(url)}&color=%23c87f45" title="${title}" loading="lazy"></iframe></div>`
   );
 
+  // url is the normal open.spotify.com link — album, track, playlist, or artist.
+// height: 152 for a compact track player, 352 (default) for album/playlist.
+eleventyConfig.addShortcode("spotify", (url, height = 352) => {
+  const embedUrl = url.split("?")[0].replace("open.spotify.com/", "open.spotify.com/embed/");
+  return `<div class="embed embed--audio" style="height:${height}px"><iframe src="${embedUrl}" title="Spotify" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>`;
+});
+
 
   /* ---------- images ---------- */
 
