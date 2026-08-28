@@ -127,6 +127,7 @@ For a second video partway down, put a shortcode in the body:
 
 ```
 {% youtube "VIDEO_ID" %}
+{% vimeo "1084432956" %}
 ```
 
 ---

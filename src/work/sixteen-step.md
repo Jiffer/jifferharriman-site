@@ -1,11 +1,11 @@
 ---
 title: 16 Step
-year: 2019
+year: 2018
 tagline: A sixteen-step sequencer you play with your feet.
 kinds: [installation, public, instrument, sound]
 role: Concept, hardware, software
 venues:
-  - Museum of Boulder, April 2019
+  - Museum of Boulder
 booking: false
 ---
 
