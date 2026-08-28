@@ -15,8 +15,8 @@ venues:
   - Boulder Experiments in Public Art, 2026
   - Tulagi Festival, 2026
 onview:
-  venue: Museum of Boulder
-  until: "through 2026"
+  venue: Pearl St. Mall
+  until: "Aug 28-30"
 howto:
   - Grab a station — up to six people can play at once.
   - Buttons trigger loops, or notes. There are no wrong notes.

@@ -2,7 +2,7 @@
 title: Modular Muse
 year: 2018
 tagline: Toolkits so other people can build the instruments.
-kinds: [sound, research, teaching]
+kinds: [sound, research, toolkit]
 role: Research, hardware, software, curriculum
 # links:
 #   - label: modularmuse.com

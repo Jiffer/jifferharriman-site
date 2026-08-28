@@ -2,7 +2,7 @@
 title: SolidNoise
 year: 2016
 tagline: A robotic ensemble that plays the room it's standing in.
-kinds: [instrument, sound, research, musical robotics, toolkit]
+kinds: [instrument, sound, research, musical-robotics, toolkit]
 role: Hardware, software, composition
 credits: Matthew Bethancourt, Abhishek Narula, Michael Theodore, Mark Gross
 venues:

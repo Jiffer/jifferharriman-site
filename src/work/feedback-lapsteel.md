@@ -2,7 +2,7 @@
 title: Feedback Lap Steel Guitar
 year: 2012, 2015
 tagline: Harness the power of mechanical feedback
-kinds: [instrument, sound, research, musical robotics]
+kinds: [instrument, sound, research, musical-robotics]
 role: Hardware, software, composition
 
 venues:

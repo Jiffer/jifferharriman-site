@@ -4,26 +4,24 @@ description: Interactive sound installations, musical robots, and instruments an
 ---
 {%- for p in collections.projects %}{% if p.data.onview %}
 <a class="nowshowing" href="{{ p.url | url }}">
-  <span class="nowshowing__dot" aria-hidden="true"></span>
+  <span class="nowshowing__thumb">{% thumb p.fileSlug, p.data.title, p.data.focus %}</span>
   <span class="nowshowing__text">
-    <strong>Now showing &middot; {{ p.data.title }}</strong>
-    <span class="nowshowing__sub">{{ p.data.onview.venue }} &mdash; how to play &rarr;</span>
+    <span class="nowshowing__kicker">
+      <span class="nowshowing__dot" aria-hidden="true"></span>Now showing
+    </span>
+    <strong class="nowshowing__title">{{ p.data.title }}</strong>
+    <span class="nowshowing__venue">{{ p.data.onview.venue }}</span>
+    <span class="nowshowing__btn">How to play &rarr;</span>
   </span>
 </a>
 {% endif %}{% endfor %}
 
 <header class="hero">
-  <h1 class="hero__name">Instruments and experiences anyone can play.</h1>
+  <h1 class="hero__name">Instruments and experiences<br>anyone can play.</h1>
   <p class="hero__thesis">
     Interactive installations, musical robots, and the tools to build them.
     <em>No experience required.</em>
   </p>
-
-  {# <div class="seq" data-seq aria-label="Step sequencer — click steps to build a pattern"></div>
-  <div class="seq__controls" data-seq-controls>
-    <button class="seq__btn" type="button" data-seq-mute aria-pressed="false">Sound off</button>
-    <span class="seq__label">Click the steps &mdash; it plays</span>
-  </div> #}
 </header>
 
 <section class="sec">
