@@ -2,8 +2,8 @@
 title: Wanderers
 year: 2021
 tagline: A soundwalk where every planet sings as you pass it.
-kinds: [installation, public, sound, collaboration]
-role: Audio programming, app design
+kinds: [installation, public, sound, app]
+role: Interactive audio programming, App design
 credits: Teri Rueb (director) and Roberto Azaretto (sound design and composition)
 venues:
   - Fiske Planetarium, CU Boulder — Dec 2021–present

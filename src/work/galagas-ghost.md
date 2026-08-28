@@ -1,7 +1,7 @@
 ---
 title: Galaga's Ghost
 
-year: 2021
+year: 2026
 featured: true
 tagline: A six-player musical arcade machine, and a dance party waiting to happen.
 kinds: [instrument, installation, sound]

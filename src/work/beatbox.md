@@ -1,6 +1,6 @@
 ---
 title: beatBox
-year: 2015
+year: 2014
 tagline: A drum machine you play by casting shadows.
 kinds: [instrument, sound]
 role: Concept, hardware, software
