@@ -5,7 +5,7 @@ year: 2026
 featured: true
 tagline: A six-player musical arcade machine, and a dance party waiting to happen.
 kinds: [instrument, installation, sound]
-role: Concept, hardware, public, software, fabrication, music & sound design
+# role: Concept, hardware, software, fabrication, music & sound design
 credits: >-
   2026 rebuild: Jiffer Harriman, with carpentry by Marc Seyfirth.
   2021 build with Sean Winters, Chase Stewart, Spencer Arrasmith,
