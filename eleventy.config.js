@@ -8,7 +8,7 @@ const { default: Image, generateHTML } = require("@11ty/eleventy-img");
      "/jifferharriman-site/"   → GitHub Pages before DNS is pointed
    Change this, run `npm run build`, push. Nothing else moves.
    --------------------------------------------------------------- */
-const PATH_PREFIX = "/jifferharriman-site/";
+const PATH_PREFIX = "/";
 
 const IMG_SRC = "src/images/projects";
 const IMG_OUT = "docs/img";
