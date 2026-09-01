@@ -3,14 +3,15 @@ layout: layouts/base.njk
 description: Interactive sound installations, musical robots, and instruments anyone can play. Boulder, Colorado.
 ---
 {%- for p in collections.projects %}{% if p.data.onview %}
-<a class="nowshowing" href="{{ p.url | url }}">
+{%- set upcoming = p.data.onview.status == "upcoming" %}
+<a class="nowshowing{% if upcoming %} nowshowing--upcoming{% endif %}" href="{{ p.url | url }}">
   <span class="nowshowing__thumb">{% thumb p.fileSlug, p.data.title, p.data.focus %}</span>
   <span class="nowshowing__text">
     <span class="nowshowing__kicker">
-      <span class="nowshowing__dot" aria-hidden="true"></span>Now showing
+      <span class="nowshowing__dot" aria-hidden="true"></span>{% if upcoming %}Coming soon{% else %}Now showing{% endif %}
     </span>
     <strong class="nowshowing__title">{{ p.data.title }}</strong>
-    <span class="nowshowing__venue">{{ p.data.onview.venue }}</span>
+    <span class="nowshowing__venue">{{ p.data.onview.venue }}{% if p.data.onview.when %} &middot; {{ p.data.onview.when }}{% endif %}</span>
     <span class="nowshowing__btn">How to play &rarr;</span>
   </span>
 </a>

@@ -664,6 +664,9 @@ img.card__thumb--capped {
   background: var(--ink);
   flex: 0 0 8px;
 }
+
+.nowshowing--upcoming .nowshowing__dot { animation: none; opacity: 0.45; }
+
 @media (prefers-reduced-motion: no-preference) {
   .nowshowing__dot { animation: onview-pulse 2s ease-in-out infinite; }
 }
