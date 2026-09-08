@@ -2,7 +2,7 @@
 title: The Wreckord Player
 year: 2016
 tagline: A record player that forgets what it's playing.
-kinds: [instrument, independent]
+kinds: [instrument, sound]
 role: Concept, hardware, software
 ---
 
