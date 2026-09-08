@@ -575,6 +575,7 @@ img.card__thumb--capped {
   .onview__dot { animation: onview-pulse 2s ease-in-out infinite; }
   @keyframes onview-pulse { 50% { opacity: 0.25; } }
 }
+.onview--upcoming .onview__dot { animation: none; opacity: 0.45; }
 
 /* Instructions for someone standing in front of the piece — sits above the
    body copy so a phone shows it without scrolling. */
@@ -665,12 +666,11 @@ img.card__thumb--capped {
   flex: 0 0 8px;
 }
 
-.nowshowing--upcoming .nowshowing__dot { animation: none; opacity: 0.45; }
-.onview--upcoming .onview__dot { animation: none; opacity: 0.45; }
-
 @media (prefers-reduced-motion: no-preference) {
   .nowshowing__dot { animation: onview-pulse 2s ease-in-out infinite; }
 }
+.nowshowing--upcoming .nowshowing__dot,
+.nowshowing--ongoing .nowshowing__dot { animation: none; opacity: 0.45; }
 
 .nowshowing__title {
   font-family: var(--f-display);

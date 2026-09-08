@@ -2,7 +2,7 @@
 title: beatBox
 year: 2014
 tagline: A drum machine you play by casting shadows.
-kinds: [instrument, sound]
+kinds: [instrument, sound, light]
 role: Concept, hardware, software
 venues:
   - Museum of Boulder, Google Garage — beatBox Penta

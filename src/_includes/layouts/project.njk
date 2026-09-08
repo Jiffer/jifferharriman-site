@@ -14,8 +14,8 @@ layout: layouts/base.njk
 <p class="proj__tagline">{{ tagline }}</p>
 
 {% if onview %}
-<p class="onview"><span class="onview__dot" aria-hidden="true"></span>
-  On view &middot; {{ onview.venue }}{% if onview.until %} &middot; {{ onview.until }}{% endif %}
+<p class="onview{% if onview.status == 'upcoming' %} onview--upcoming{% endif %}"><span class="onview__dot" aria-hidden="true"></span>
+  {% if onview.status == 'upcoming' %}Coming soon{% else %}On view{% endif %} &middot; {{ onview.venue }}{% if onview.when %} &middot; {{ onview.when }}{% endif %}
 </p>
 {% endif %}
 

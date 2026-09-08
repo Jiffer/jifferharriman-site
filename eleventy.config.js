@@ -166,6 +166,12 @@ eleventyConfig.addShortcode("spotify", (url, height = 352) => {
 
   eleventyConfig.addFilter("kindList", (kinds) => (kinds || []).join(" "));
 
+  // Picks what the homepage banner shows: an active onview project first,
+  // otherwise whichever project is flagged default_banner (e.g. B.E.A.T.).
+  eleventyConfig.addFilter("bannerProject", (projects) =>
+    projects.find((p) => p.data.onview) || projects.find((p) => p.data.default_banner) || null
+  );
+
   return {
     pathPrefix: PATH_PREFIX,
     dir: { input: "src", output: "docs", includes: "_includes", data: "_data" },

@@ -16,7 +16,7 @@ venues:
   - Tulagi Festival, 2026
 onview:
   venue: Museum of Boulder — Broadway & Pine
-  when: "Sept 12"
+  when: "Oct. 3"
   status: upcoming
 howto:
   - Grab a station — up to six people can play at once.

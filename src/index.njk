@@ -2,20 +2,22 @@
 layout: layouts/base.njk
 description: Interactive sound installations, musical robots, and instruments anyone can play. Boulder, Colorado.
 ---
-{%- for p in collections.projects %}{% if p.data.onview %}
-{%- set upcoming = p.data.onview.status == "upcoming" %}
-<a class="nowshowing{% if upcoming %} nowshowing--upcoming{% endif %}" href="{{ p.url | url }}">
-  <span class="nowshowing__thumb">{% thumb p.fileSlug, p.data.title, p.data.focus %}</span>
+{%- set banner = collections.projects | bannerProject %}
+{% if banner %}
+{%- set fallback = not banner.data.onview %}
+{%- set upcoming = banner.data.onview and banner.data.onview.status == "upcoming" %}
+<a class="nowshowing{% if upcoming %} nowshowing--upcoming{% endif %}{% if fallback %} nowshowing--ongoing{% endif %}" href="{{ banner.url | url }}">
+  <span class="nowshowing__thumb">{% thumb banner.fileSlug, banner.data.title, banner.data.focus %}</span>
   <span class="nowshowing__text">
     <span class="nowshowing__kicker">
-      <span class="nowshowing__dot" aria-hidden="true"></span>{% if upcoming %}Coming soon{% else %}Now showing{% endif %}
+      <span class="nowshowing__dot" aria-hidden="true"></span>{% if fallback %}Ongoing{% elif upcoming %}Coming soon{% else %}Now showing{% endif %}
     </span>
-    <strong class="nowshowing__title">{{ p.data.title }}</strong>
-    <span class="nowshowing__venue">{{ p.data.onview.venue }}{% if p.data.onview.when %} &middot; {{ p.data.onview.when }}{% endif %}</span>
-    <span class="nowshowing__btn">How to play &rarr;</span>
+    <strong class="nowshowing__title">{{ banner.data.title }}</strong>
+    <span class="nowshowing__venue">{% if fallback %}{{ banner.data.tagline }}{% else %}{{ banner.data.onview.venue }}{% if banner.data.onview.when %} &middot; {{ banner.data.onview.when }}{% endif %}{% endif %}</span>
+    <span class="nowshowing__btn">{% if fallback %}Learn more{% else %}How to play{% endif %} &rarr;</span>
   </span>
 </a>
-{% endif %}{% endfor %}
+{% endif %}
 
 <header class="hero">
   <h1 class="hero__name">Instruments and experiences<br>anyone can play.</h1>
@@ -39,7 +41,7 @@ description: Interactive sound installations, musical robots, and instruments an
     {%- for p in collections.projects %}
     <a class="card" href="{{ p.url | url }}" data-kinds="{{ p.data.kinds | kindList }}">
       {% thumb p.fileSlug, p.data.title, p.data.focus %}
-      <div class="card__meta">{% if p.data.onview %}<span class="card__onview">On view</span> &middot; {% endif %}{{ p.data.year }} &middot; {{ p.data.kinds[0] }}</div>
+      <div class="card__meta">{% if p.data.onview %}<span class="card__onview">{% if p.data.onview.status == "upcoming" %}Coming soon{% else %}On view{% endif %}</span> &middot; {% endif %}{{ p.data.year }} &middot; {{ p.data.kinds[0] }}</div>
       <h3 class="card__title">{{ p.data.title }}</h3>
       <p class="card__tagline">{{ p.data.tagline }}</p>
     </a>
