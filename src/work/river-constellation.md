@@ -1,8 +1,8 @@
 ---
 title: River Constellation
 year: 2019
-tagline: Harness the power of mechanical feedback
-kinds: [installation, sound, public, light]
+tagline: A distributed sound and light installation.
+kinds: [installation, sound, light]
 role: Hardware, software, composition
 credits: Natalia Zubko (sculpture) and Beau Kenyon (Musical composition), Dispersion, Juno Works
 venues:

@@ -1,7 +1,7 @@
 ---
 title: The Wreckord Player
-year: 2016
-tagline: A record player that forgets what it's playing.
+year: 2013
+tagline: A record player that forgets, and remembers what it's playing.
 kinds: [instrument, sound]
 role: Concept, hardware, software
 ---

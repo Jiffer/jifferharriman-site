@@ -1,7 +1,7 @@
 ---
 title: Listening Lamp
 year: 2018
-tagline: A lamp that listens back.
+tagline: A lamp that listens and lights back.
 kinds: [light, sound]
 # media: { type: vimeo, id: 260268233 }
 role: Concept, hardware, software

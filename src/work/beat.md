@@ -1,7 +1,7 @@
 ---
 title: B.E.A.T.
 year: 2019
-tagline: A recurring gathering for Boulder's artists, engineers, and everyone building at the edge of both.
+tagline: A recurring gathering for Boulder's artists, engineers, or anyone building at the intersection of both.
 kinds: [public, collaboration]
 role: Founder, organizer
 default_banner: true

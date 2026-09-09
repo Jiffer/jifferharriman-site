@@ -1,8 +1,8 @@
 ---
 title: Wanderers
 year: 2021
-tagline: A soundwalk where every planet sings as you pass it.
-kinds: [installation, public, sound, app]
+tagline: A soundwalk where the planets sing as they pass by.
+kinds: [installation, sound, app]
 role: Interactive audio programming, App design
 credits: Teri Rueb (director) and Roberto Azaretto (sound design and composition)
 venues:

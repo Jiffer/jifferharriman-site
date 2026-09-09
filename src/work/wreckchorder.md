@@ -1,6 +1,7 @@
 ---
 title: WreckChorder
-year: # fill in — no date turned up anywhere
+year: 2011
+tagline: Intuitive chord selection, quantized rhythms
 tagline: Record tracks, then wreck 'em.
 kinds: [app, sound]
 role: Concept, software
