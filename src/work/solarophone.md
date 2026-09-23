@@ -1,8 +1,8 @@
 ---
 title: Solarophone
 year: 2016
-tagline: Sound art in the conoid, played by light.
-kinds: [installation, sound, public, musical-robotics]
+tagline: Sound art in the Library conoid, played by light. (Shhhh...)
+kinds: [installation, sound, musical-robotics]
 role: Concept, hardware, software
 venues:
   - Boulder Public Library, 2016

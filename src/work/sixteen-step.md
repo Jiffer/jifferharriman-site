@@ -1,8 +1,8 @@
 ---
 title: 16 Step
 year: 2018
-tagline: A sixteen-step sequencer you play with your feet.
-kinds: [installation, public, instrument, sound]
+tagline: A sequencer you play with your feet.
+kinds: [installation, instrument, sound]
 role: Concept, hardware, software
 venues:
   - Museum of Boulder
