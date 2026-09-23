@@ -1,8 +1,7 @@
 ---
 title: WreckChorder
 year: 2011
-tagline: Intuitive chord selection, quantized rhythms
-tagline: Record tracks, then wreck 'em.
+tagline: Intuitive chord selection, quantized rhythms, Record tracks, then wreck 'em.
 kinds: [app, sound]
 role: Concept, software
 ---
