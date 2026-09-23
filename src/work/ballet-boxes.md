@@ -2,7 +2,7 @@
 title: Ballet Boxes
 year: 2024
 tagline: Two sound-reactive boxes that glow from within, built for dancers to stand on.
-kinds: [installation, commission, light, sound]
+kinds: [installation, light, sound]
 role: Concept, hardware, software, fabrication
 credits: Commissioned by Boulder Ballet
 venues:
