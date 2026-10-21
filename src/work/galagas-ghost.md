@@ -15,15 +15,16 @@ venues:
   - Boulder Experiments in Public Art, 2026
   - Tulagi Festival, 2026
 onview:
-  venue: Museum of Boulder — Broadway & Pine
-  when: "Oct. 3"
+  venue: WHAAAT!? Alt. Game Festival University of Colorado, ATLAS
+  when: "Nov. 7"
   status: upcoming
 howto:
   - Grab a station — up to six people can play at once.
   - Buttons trigger loops, or notes. <b>There are no wrong notes.</b>
   - Joystick and distance sensors shape the sound, try them out and listen!
   - Listen to what everyone else is doing and jam along.
-  - It runs continuously. Stay as long as you like.
+  - Hexagons launch in the visuals and connect based on station rules
+  - It runs continuously - ever evolving. Stay as long as you like.
 
 bookingIntro: Want to bring Galaga's Ghost to your event, or make music for the Ghost? Get in touch!
 booking: true
@@ -35,8 +36,8 @@ musicianship so the players can focus on the exploration.
 
 Each station acts as its own MIDI device feeding into an Ableton Live Set.
 
-It was built in 2021 for *Convivial Machines* at the Museum of Boulder, in
+It was originally built in 2021 for *Convivial Machines* at the Museum of Boulder, in
 collaboration with Boulder Experiments in Art and Technology (B.E.A.T.).
 
-Rebuilt from the ground up in 2026 — new cabinet, new electronics, and a 6.1
-sound system, so the low end is felt as much as heard.
+Rebuilt from the ground up in 2026 — new controls, new electronics, and a 6.1
+sound system.

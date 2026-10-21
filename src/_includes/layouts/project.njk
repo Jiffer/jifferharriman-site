@@ -22,11 +22,11 @@ layout: layouts/base.njk
 {% if howto %}
 <section class="howto" aria-labelledby="howto-h">
   <h2 class="howto__h" id="howto-h">How to play</h2>
-  <ol class="howto__list">
+  <ul class="howto__list">
     {%- for step in howto %}
-    <li>{{ step }}</li>
+    <li>{{ step | safe }}</li>
     {%- endfor %}
-  </ol>
+  </ul>
 </section>
 {% endif %}
 
