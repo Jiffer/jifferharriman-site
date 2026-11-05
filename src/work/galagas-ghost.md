@@ -20,21 +20,22 @@ onview:
   status: upcoming
 howto:
   - Grab a station — up to six people can play at once.
+  - No Rules or goals beyond musical and video gameified exploration
   - Buttons trigger loops, or notes. <b>There are no wrong notes.</b>
   - Joystick and distance sensors shape the sound, try them out and listen!
   - Listen to what everyone else is doing and jam along.
   - Hexagons launch in the visuals and connect based on station rules
   - It runs continuously - ever evolving. Stay as long as you like.
+  - NOW WITH GALAGA SPACESHIPS! - Fly the ship and shoot to hatch space bugs
 
 bookingIntro: Want to bring Galaga's Ghost to your event, or make music for the Ghost? Get in touch!
 booking: true
 ---
 
 Galaga's Ghost is a six-player musical arcade cabinet. Six people play at once,
-and nobody has to know how to play anything — the instrument handles the
-musicianship so the players can focus on the exploration.
+the instrument handles the musicianship so the players can focus on the exploration.
 
-Each station acts as its own MIDI device feeding into an Ableton Live Set.
+Each station acts as its own MIDI device feeding into an Ableton Live Set. Joysticks control continuous parameters like filters or distions, buttons select or enable clips or effects, the distance sensor also maps as a MIDI controller. LISTEN AND EXPORE!
 
 It was originally built in 2021 for *Convivial Machines* at the Museum of Boulder, in
 collaboration with Boulder Experiments in Art and Technology (B.E.A.T.).
