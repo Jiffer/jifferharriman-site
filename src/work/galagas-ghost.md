@@ -27,7 +27,9 @@ howto:
   - Hexagons launch in the visuals and connect based on station rules
   - It runs continuously - ever evolving. Stay as long as you like.
   - NOW WITH GALAGA SPACESHIPS! - Fly the ship and shoot to hatch space bugs
-
+links:
+  - label: "Ready Player One through Six, by Joe Arney"
+    url: https://www.colorado.edu/cmdinow/2026/10/26/ready-player-one-through-six
 bookingIntro: Want to bring Galaga's Ghost to your event, or make music for the Ghost? Get in touch!
 booking: true
 ---
